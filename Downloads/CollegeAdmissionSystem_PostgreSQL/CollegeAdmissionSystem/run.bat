@@ -1,4 +1,7 @@
 @echo off
+:: Always run from the directory where this script lives (fixes double-click from Explorer)
+cd /d "%~dp0"
+
 echo ========================================
 echo  College Admission and Fee System
 echo  PostgreSQL + Java OOP

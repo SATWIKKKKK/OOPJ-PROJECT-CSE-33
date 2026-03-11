@@ -3,17 +3,14 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Main",
-            "request": "launch",
-            "mainClass": "com.college.Main",
-            "projectName": "CollegeAdmissionSystem_bb34e349"
-        },
-        {
-            "type": "java",
             "name": "Launch College Admission System",
             "request": "launch",
             "mainClass": "com.college.Main",
-            "projectName": "CollegeAdmissionSystem"
+            "classPaths": [
+                "${workspaceFolder}/out",
+                "${workspaceFolder}/lib/postgresql-42.7.10.jar"
+            ],
+            "console": "integratedTerminal"
         }
     ]
 }
