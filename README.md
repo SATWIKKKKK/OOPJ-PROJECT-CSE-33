@@ -99,20 +99,6 @@ Or paste `schema.sql` contents into pgAdmin Query Tool and execute.
 ### Step 3 — Download JDBC Driver
 Download `postgresql-42.x.x.jar` from [jdbc.postgresql.org](https://jdbc.postgresql.org/download/) and place it in the `lib/` folder.
 
-### Step 4 — Configure Credentials
-Edit the `.env` file in the project root:
-```env
-# Database
-DB_HOST=localhost
-DB_PORT=5432
-DB_NAME=college_db
-DB_USERNAME=postgres
-DB_PASSWORD=your_postgres_password
-
-# Admin Portal
-ADMIN_USERNAME=admin
-ADMIN_PASSWORD=admin123
-```
 
 > **🔐 How to change admin credentials:**
 > - **Option 1:** Edit the `.env` file directly — change `ADMIN_USERNAME` and `ADMIN_PASSWORD`
