@@ -28,6 +28,7 @@ echo Using driver: %JDBC_JAR%
 echo Compiling...
 
 javac -cp "%JDBC_JAR%" -d out ^
+  src\com\college\utils\*.java ^
   src\com\college\models\*.java ^
   src\com\college\interfaces\*.java ^
   src\com\college\exceptions\*.java ^

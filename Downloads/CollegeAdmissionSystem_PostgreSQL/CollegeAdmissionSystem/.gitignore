@@ -1,0 +1,22 @@
+# Compiled output
+out/
+
+# Environment file (contains credentials)
+.env
+
+# IDE settings
+.vscode/
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Java build artifacts
+*.class
+*.jar
+!lib/*.jar
+
+# Logs
+*.log

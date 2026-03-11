@@ -1,0 +1,8 @@
+# Ignore everything in home directory
+*
+
+# Only track the college project
+!Downloads/
+!Downloads/CollegeAdmissionSystem_PostgreSQL/
+!Downloads/CollegeAdmissionSystem_PostgreSQL/CollegeAdmissionSystem/
+!Downloads/CollegeAdmissionSystem_PostgreSQL/CollegeAdmissionSystem/**

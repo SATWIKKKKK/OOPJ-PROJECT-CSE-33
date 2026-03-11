@@ -1,5 +1,6 @@
 package com.college.database;
 
+import com.college.utils.EnvConfig;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -7,15 +8,16 @@ import java.sql.SQLException;
 /**
  * Singleton Database Connection Manager
  * Demonstrates DESIGN PATTERN (Singleton) + Encapsulation
+ * Reads credentials from .env file via EnvConfig
  */
 public class DBConnection {
 
-    // ── Configuration — change these to match your PostgreSQL setup ───────────
-    private static final String HOST     = "localhost";
-    private static final String PORT     = "5432";
-    private static final String DATABASE = "college_db";
-    private static final String USERNAME = "postgres";
-    private static final String PASSWORD = "admin123";  // ← change to your pg password
+    // ── Configuration loaded from .env (with safe defaults) ──────────────────
+    private static final String HOST     = EnvConfig.get("DB_HOST", "localhost");
+    private static final String PORT     = EnvConfig.get("DB_PORT", "5432");
+    private static final String DATABASE = EnvConfig.get("DB_NAME", "college_db");
+    private static final String USERNAME = EnvConfig.get("DB_USERNAME", "postgres");
+    private static final String PASSWORD = EnvConfig.get("DB_PASSWORD", "admin123");
 
     private static final String URL =
         "jdbc:postgresql://" + HOST + ":" + PORT + "/" + DATABASE;

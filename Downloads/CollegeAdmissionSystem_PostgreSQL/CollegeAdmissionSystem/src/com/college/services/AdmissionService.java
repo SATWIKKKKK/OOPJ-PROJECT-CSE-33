@@ -265,6 +265,75 @@ public class AdmissionService implements Manageable<Applicant> {
         } catch (SQLException e) { System.err.println("  [DB Error] " + e.getMessage()); }
     }
 
+    // ── Delete Course ─────────────────────────────────────────────────────────
+
+    public boolean deleteCourse(String courseId) {
+        try {
+            Connection conn = DBConnection.getConnection();
+            // Check for enrolled students
+            try (PreparedStatement ps = conn.prepareStatement(
+                    "SELECT COUNT(*) FROM students WHERE course_id=?")) {
+                ps.setString(1, courseId);
+                try (ResultSet rs = ps.executeQuery()) {
+                    if (rs.next() && rs.getInt(1) > 0) return false;
+                }
+            }
+            // Check for pending applications
+            try (PreparedStatement ps = conn.prepareStatement(
+                    "SELECT COUNT(*) FROM applicants WHERE applied_course_id=? AND application_status='PENDING'")) {
+                ps.setString(1, courseId);
+                try (ResultSet rs = ps.executeQuery()) {
+                    if (rs.next() && rs.getInt(1) > 0) return false;
+                }
+            }
+            // Delete fee structure first (FK), then course
+            conn.setAutoCommit(false);
+            try {
+                try (PreparedStatement ps = conn.prepareStatement("DELETE FROM fee_structures WHERE course_id=?")) {
+                    ps.setString(1, courseId);
+                    ps.executeUpdate();
+                }
+                try (PreparedStatement ps = conn.prepareStatement("DELETE FROM courses WHERE course_id=?")) {
+                    ps.setString(1, courseId);
+                    int rows = ps.executeUpdate();
+                    conn.commit();
+                    conn.setAutoCommit(true);
+                    return rows > 0;
+                }
+            } catch (SQLException e) {
+                conn.rollback();
+                conn.setAutoCommit(true);
+                throw e;
+            }
+        } catch (SQLException e) {
+            System.err.println("  [DB Error] " + e.getMessage());
+            return false;
+        }
+    }
+
+    // ── Update Student Field ──────────────────────────────────────────────────
+
+    public boolean updateStudentField(String studentId, String field, String value) {
+        // Only allow specific fields to prevent SQL injection
+        if (!field.equals("semester") && !field.equals("cgpa") && !field.equals("status")) {
+            System.err.println("  [Error] Invalid field: " + field);
+            return false;
+        }
+        String sql = "UPDATE students SET " + field + "=? WHERE student_id=?";
+        try (PreparedStatement ps = DBConnection.getConnection().prepareStatement(sql)) {
+            switch (field) {
+                case "semester" -> ps.setInt(1, Integer.parseInt(value));
+                case "cgpa"     -> ps.setDouble(1, Double.parseDouble(value));
+                case "status"   -> ps.setString(1, value);
+            }
+            ps.setString(2, studentId);
+            return ps.executeUpdate() > 0;
+        } catch (SQLException e) {
+            System.err.println("  [DB Error] " + e.getMessage());
+            return false;
+        }
+    }
+
     // ── Manageable<Applicant> ─────────────────────────────────────────────────
 
     @Override public void add(Applicant a)       { System.out.println("  Use applyForAdmission() for full validation."); }

@@ -165,6 +165,27 @@ public class FeeService implements Manageable<Payment>, Payable {
         } catch (SQLException e) { System.err.println("  [DB Error] " + e.getMessage()); }
     }
 
+    // ── Update Fee Structure ──────────────────────────────────────────────────
+
+    public void updateFeeStructure(String courseId, double admissionFee, double tuitionFee,
+                                   double libraryFee, double labFee, double examFee,
+                                   double hostelFee, double transportFee) {
+        String sql = "UPDATE fee_structures SET admission_fee=?, tuition_fee_per_semester=?," +
+            " library_fee_per_semester=?, lab_fee_per_semester=?, exam_fee_per_semester=?," +
+            " hostel_fee_per_year=?, transport_fee_per_year=? WHERE course_id=?";
+        try (PreparedStatement ps = DBConnection.getConnection().prepareStatement(sql)) {
+            ps.setDouble(1, admissionFee);
+            ps.setDouble(2, tuitionFee);
+            ps.setDouble(3, libraryFee);
+            ps.setDouble(4, labFee);
+            ps.setDouble(5, examFee);
+            ps.setDouble(6, hostelFee);
+            ps.setDouble(7, transportFee);
+            ps.setString(8, courseId);
+            ps.executeUpdate();
+        } catch (SQLException e) { System.err.println("  [DB Error] " + e.getMessage()); }
+    }
+
     // ── Payment Queries ───────────────────────────────────────────────────────
 
     public List<Payment> getPaymentsByStudentId(String studentId) {
