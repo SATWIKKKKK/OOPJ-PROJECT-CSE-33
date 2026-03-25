@@ -1,0 +1,717 @@
+{
+  "total": 38,
+  "failed": 0,
+  "failedRoutes": [],
+  "report": [
+    {
+      "type": "frontend",
+      "route": "/",
+      "status": 200
+    },
+    {
+      "type": "frontend",
+      "route": "/books",
+      "status": 200
+    },
+    {
+      "type": "frontend",
+      "route": "/members",
+      "status": 200
+    },
+    {
+      "type": "frontend",
+      "route": "/librarians",
+      "status": 200
+    },
+    {
+      "type": "frontend",
+      "route": "/issues",
+      "status": 200
+    },
+    {
+      "type": "frontend",
+      "route": "/queries",
+      "status": 200
+    },
+    {
+      "type": "frontend",
+      "route": "/views",
+      "status": 200
+    },
+    {
+      "type": "api",
+      "route": "POST /api/setup",
+      "status": 200,
+      "data": {
+        "message": "Database setup completed successfully"
+      }
+    },
+    {
+      "type": "api",
+      "route": "POST /api/books",
+      "status": 201,
+      "data": {
+        "id": 18,
+        "title": "E2E Database Systems",
+        "author": "Test Author",
+        "isbn": "9780000005901",
+        "total_copies": 5,
+        "available_copies": 5,
+        "publication_year": 2025,
+        "category": null,
+        "created_at": "2026-03-25T03:04:11.518Z",
+        "updated_at": "2026-03-25T03:04:11.518Z"
+      }
+    },
+    {
+      "type": "api",
+      "route": "POST /api/members",
+      "status": 201,
+      "data": {
+        "id": 15,
+        "name": "E2E Member",
+        "email": "e2e.member@example.com",
+        "phone": "9000000000",
+        "address": "E2E Street",
+        "membership_date": "2026-03-24T18:30:00.000Z",
+        "status": "active",
+        "created_at": "2026-03-25T03:04:11.785Z",
+        "updated_at": "2026-03-25T03:04:11.785Z"
+      }
+    },
+    {
+      "type": "api",
+      "route": "POST /api/librarians",
+      "status": 201,
+      "data": {
+        "id": 9,
+        "name": "E2E Librarian",
+        "email": "e2e.librarian@example.com",
+        "phone": "9111111111",
+        "employee_id": "LIB-E2E-5900",
+        "hire_date": "2026-03-24T18:30:00.000Z",
+        "created_at": "2026-03-25T03:04:12.050Z",
+        "updated_at": "2026-03-25T03:04:12.050Z"
+      }
+    },
+    {
+      "type": "api",
+      "route": "GET /api/books",
+      "status": 200,
+      "data": [
+        {
+          "id": 3,
+          "title": "1984",
+          "author": "George Orwell",
+          "isbn": "978-0451524935",
+          "total_copies": 3,
+          "available_copies": 3,
+          "publication_year": 1949,
+          "category": null,
+          "created_at": "2026-03-25T03:02:19.334Z",
+          "updated_at": "2026-03-25T03:02:19.334Z"
+        },
+        {
+          "id": 18,
+          "title": "E2E Database Systems",
+          "author": "Test Author",
+          "isbn": "9780000005901",
+          "total_copies": 5,
+          "available_copies": 5,
+          "publication_year": 2025,
+          "category": null,
+          "created_at": "2026-03-25T03:04:11.518Z",
+          "updated_at": "2026-03-25T03:04:11.518Z"
+        },
+        {
+          "id": 4,
+          "title": "Pride and Prejudice",
+          "author": "Jane Austen",
+          "isbn": "978-0141439518",
+          "total_copies": 6,
+          "available_copies": 6,
+          "publication_year": 1813,
+          "category": null,
+          "created_at": "2026-03-25T03:02:19.334Z",
+          "updated_at": "2026-03-25T03:02:19.334Z"
+        },
+        {
+          "id": 5,
+          "title": "The Catcher in the Rye",
+          "author": "J.D. Salinger",
+          "isbn": "978-0316769174",
+          "total_copies": 2,
+          "available_copies": 2,
+          "publication_year": 1951,
+          "category": null,
+          "created_at": "2026-03-25T03:02:19.334Z",
+          "updated_at": "2026-03-25T03:02:19.334Z"
+        },
+        {
+          "id": 1,
+          "title": "The Great Gatsby",
+          "author": "F. Scott Fitzgerald",
+          "isbn": "978-0743273565",
+          "total_copies": 5,
+          "available_copies": 5,
+          "publication_year": 1925,
+          "category": null,
+          "created_at": "2026-03-25T03:02:19.334Z",
+          "updated_at": "2026-03-25T03:02:19.334Z"
+        },
+        {
+          "id": 2,
+          "title": "To Kill a Mockingbird",
+          "author": "Harper Lee",
+          "isbn": "978-0061120084",
+          "total_copies": 4,
+          "available_copies": 4,
+          "publication_year": 1960,
+          "category": null,
+          "created_at": "2026-03-25T03:02:19.334Z",
+          "updated_at": "2026-03-25T03:02:19.334Z"
+        }
+      ]
+    },
+    {
+      "type": "api",
+      "route": "GET /api/members",
+      "status": 200,
+      "data": [
+        {
+          "id": 1,
+          "name": "Alice Johnson",
+          "email": "alice@example.com",
+          "phone": "555-0101",
+          "address": "123 Main St",
+          "membership_date": "2026-03-24T18:30:00.000Z",
+          "status": "active",
+          "created_at": "2026-03-25T03:02:19.616Z",
+          "updated_at": "2026-03-25T03:02:19.616Z"
+        },
+        {
+          "id": 2,
+          "name": "Bob Smith",
+          "email": "bob@example.com",
+          "phone": "555-0102",
+          "address": "456 Oak Ave",
+          "membership_date": "2026-03-24T18:30:00.000Z",
+          "status": "active",
+          "created_at": "2026-03-25T03:02:19.616Z",
+          "updated_at": "2026-03-25T03:02:19.616Z"
+        },
+        {
+          "id": 3,
+          "name": "Carol White",
+          "email": "carol@example.com",
+          "phone": "555-0103",
+          "address": "789 Pine Rd",
+          "membership_date": "2026-03-24T18:30:00.000Z",
+          "status": "active",
+          "created_at": "2026-03-25T03:02:19.616Z",
+          "updated_at": "2026-03-25T03:02:19.616Z"
+        },
+        {
+          "id": 4,
+          "name": "David Brown",
+          "email": "david@example.com",
+          "phone": "555-0104",
+          "address": "321 Elm St",
+          "membership_date": "2026-03-24T18:30:00.000Z",
+          "status": "active",
+          "created_at": "2026-03-25T03:02:19.616Z",
+          "updated_at": "2026-03-25T03:02:19.616Z"
+        },
+        {
+          "id": 15,
+          "name": "E2E Member",
+          "email": "e2e.member@example.com",
+          "phone": "9000000000",
+          "address": "E2E Street",
+          "membership_date": "2026-03-24T18:30:00.000Z",
+          "status": "active",
+          "created_at": "2026-03-25T03:04:11.785Z",
+          "updated_at": "2026-03-25T03:04:11.785Z"
+        }
+      ]
+    },
+    {
+      "type": "api",
+      "route": "GET /api/librarians",
+      "status": 200,
+      "data": [
+        {
+          "id": 9,
+          "name": "E2E Librarian",
+          "email": "e2e.librarian@example.com",
+          "phone": "9111111111",
+          "employee_id": "LIB-E2E-5900",
+          "hire_date": "2026-03-24T18:30:00.000Z",
+          "created_at": "2026-03-25T03:04:12.050Z",
+          "updated_at": "2026-03-25T03:04:12.050Z"
+        },
+        {
+          "id": 1,
+          "name": "Emma Davis",
+          "email": "emma@library.com",
+          "phone": "555-0201",
+          "employee_id": "LIB001",
+          "hire_date": "2026-03-24T18:30:00.000Z",
+          "created_at": "2026-03-25T03:02:19.894Z",
+          "updated_at": "2026-03-25T03:02:19.894Z"
+        },
+        {
+          "id": 2,
+          "name": "Frank Miller",
+          "email": "frank@library.com",
+          "phone": "555-0202",
+          "employee_id": "LIB002",
+          "hire_date": "2026-03-24T18:30:00.000Z",
+          "created_at": "2026-03-25T03:02:19.894Z",
+          "updated_at": "2026-03-25T03:02:19.894Z"
+        }
+      ]
+    },
+    {
+      "type": "api",
+      "route": "PUT /api/books/18",
+      "status": 200,
+      "data": {
+        "id": 18,
+        "title": "E2E Database Systems Revised",
+        "author": "Test Author",
+        "isbn": "9780000005901",
+        "total_copies": 6,
+        "available_copies": 6,
+        "publication_year": 2026,
+        "category": null,
+        "created_at": "2026-03-25T03:04:11.518Z",
+        "updated_at": "2026-03-25T03:04:13.127Z"
+      }
+    },
+    {
+      "type": "api",
+      "route": "PUT /api/members/15",
+      "status": 200,
+      "data": {
+        "id": 15,
+        "name": "E2E Member Updated",
+        "email": "e2e.member.updated@example.com",
+        "phone": "9222222222",
+        "address": "E2E Updated Street",
+        "membership_date": "2026-03-24T18:30:00.000Z",
+        "status": null,
+        "created_at": "2026-03-25T03:04:11.785Z",
+        "updated_at": "2026-03-25T03:04:13.393Z"
+      }
+    },
+    {
+      "type": "api",
+      "route": "PUT /api/librarians/9",
+      "status": 200,
+      "data": {
+        "id": 9,
+        "name": "E2E Librarian Updated",
+        "email": "e2e.librarian.updated@example.com",
+        "phone": "9333333333",
+        "employee_id": "LIB-E2E-5901",
+        "hire_date": "2026-03-24T18:30:00.000Z",
+        "created_at": "2026-03-25T03:04:12.050Z",
+        "updated_at": "2026-03-25T03:04:13.669Z"
+      }
+    },
+    {
+      "type": "api",
+      "route": "POST /api/issues",
+      "status": 201,
+      "data": {
+        "id": 3,
+        "book_id": 18,
+        "member_id": 15,
+        "librarian_id": 9,
+        "issue_date": "2026-03-24T18:30:00.000Z",
+        "due_date": "2026-12-30T18:30:00.000Z",
+        "return_date": null,
+        "status": "issued",
+        "created_at": "2026-03-25T03:04:13.935Z",
+        "updated_at": "2026-03-25T03:04:13.935Z"
+      }
+    },
+    {
+      "type": "api",
+      "route": "GET /api/issues",
+      "status": 200,
+      "data": [
+        {
+          "id": 3,
+          "book_id": 18,
+          "member_id": 15,
+          "librarian_id": 9,
+          "issue_date": "2026-03-24T18:30:00.000Z",
+          "due_date": "2026-12-30T18:30:00.000Z",
+          "return_date": null,
+          "status": "issued",
+          "created_at": "2026-03-25T03:04:13.935Z",
+          "updated_at": "2026-03-25T03:04:13.935Z",
+          "book_title": "E2E Database Systems Revised",
+          "member_name": "E2E Member Updated",
+          "librarian_name": "E2E Librarian Updated"
+        }
+      ]
+    },
+    {
+      "type": "api",
+      "route": "PUT /api/issues/3",
+      "status": 200,
+      "data": {
+        "id": 3,
+        "book_id": 18,
+        "member_id": 15,
+        "librarian_id": 9,
+        "issue_date": "2026-03-24T18:30:00.000Z",
+        "due_date": "2026-12-30T18:30:00.000Z",
+        "return_date": "2026-03-31T18:30:00.000Z",
+        "status": "returned",
+        "created_at": "2026-03-25T03:04:13.935Z",
+        "updated_at": "2026-03-25T03:04:14.479Z"
+      }
+    },
+    {
+      "type": "api",
+      "route": "GET /api/queries?q=available-books",
+      "status": 200,
+      "data": [
+        {
+          "id": 3,
+          "title": "1984",
+          "author": "George Orwell",
+          "available_copies": 3
+        },
+        {
+          "id": 18,
+          "title": "E2E Database Systems Revised",
+          "author": "Test Author",
+          "available_copies": 6
+        },
+        {
+          "id": 4,
+          "title": "Pride and Prejudice",
+          "author": "Jane Austen",
+          "available_copies": 6
+        },
+        {
+          "id": 5,
+          "title": "The Catcher in the Rye",
+          "author": "J.D. Salinger",
+          "available_copies": 2
+        },
+        {
+          "id": 1,
+          "title": "The Great Gatsby",
+          "author": "F. Scott Fitzgerald",
+          "available_copies": 5
+        },
+        {
+          "id": 2,
+          "title": "To Kill a Mockingbird",
+          "author": "Harper Lee",
+          "available_copies": 4
+        }
+      ]
+    },
+    {
+      "type": "api",
+      "route": "GET /api/queries?q=overdue-members",
+      "status": 200,
+      "data": []
+    },
+    {
+      "type": "api",
+      "route": "GET /api/queries?q=librarian-issues",
+      "status": 200,
+      "data": [
+        {
+          "id": 9,
+          "name": "E2E Librarian Updated",
+          "total_issued": "1"
+        },
+        {
+          "id": 2,
+          "name": "Frank Miller",
+          "total_issued": "0"
+        },
+        {
+          "id": 1,
+          "name": "Emma Davis",
+          "total_issued": "0"
+        }
+      ]
+    },
+    {
+      "type": "api",
+      "route": "GET /api/queries?q=most-active-member",
+      "status": 200,
+      "data": [
+        {
+          "id": 15,
+          "name": "E2E Member Updated",
+          "email": "e2e.member.updated@example.com",
+          "books_issued": "1"
+        }
+      ]
+    },
+    {
+      "type": "api",
+      "route": "GET /api/queries?q=popular-books",
+      "status": 200,
+      "data": [
+        {
+          "id": 4,
+          "title": "Pride and Prejudice",
+          "author": "Jane Austen",
+          "total_copies": 6,
+          "available_copies": 6
+        },
+        {
+          "id": 18,
+          "title": "E2E Database Systems Revised",
+          "author": "Test Author",
+          "total_copies": 6,
+          "available_copies": 6
+        },
+        {
+          "id": 1,
+          "title": "The Great Gatsby",
+          "author": "F. Scott Fitzgerald",
+          "total_copies": 5,
+          "available_copies": 5
+        },
+        {
+          "id": 2,
+          "title": "To Kill a Mockingbird",
+          "author": "Harper Lee",
+          "total_copies": 4,
+          "available_copies": 4
+        },
+        {
+          "id": 3,
+          "title": "1984",
+          "author": "George Orwell",
+          "total_copies": 3,
+          "available_copies": 3
+        }
+      ]
+    },
+    {
+      "type": "api",
+      "route": "GET /api/queries?q=recent-members",
+      "status": 200,
+      "data": [
+        {
+          "id": 1,
+          "name": "Alice Johnson",
+          "email": "alice@example.com",
+          "membership_date": "2026-03-24T18:30:00.000Z"
+        },
+        {
+          "id": 2,
+          "name": "Bob Smith",
+          "email": "bob@example.com",
+          "membership_date": "2026-03-24T18:30:00.000Z"
+        },
+        {
+          "id": 3,
+          "name": "Carol White",
+          "email": "carol@example.com",
+          "membership_date": "2026-03-24T18:30:00.000Z"
+        },
+        {
+          "id": 4,
+          "name": "David Brown",
+          "email": "david@example.com",
+          "membership_date": "2026-03-24T18:30:00.000Z"
+        },
+        {
+          "id": 15,
+          "name": "E2E Member Updated",
+          "email": "e2e.member.updated@example.com",
+          "membership_date": "2026-03-24T18:30:00.000Z"
+        }
+      ]
+    },
+    {
+      "type": "api",
+      "route": "GET /api/queries?q=issue-summary",
+      "status": 200,
+      "data": []
+    },
+    {
+      "type": "api",
+      "route": "GET /api/queries?q=member-summary",
+      "status": 200,
+      "data": [
+        {
+          "id": 3,
+          "title": "1984",
+          "author": "George Orwell",
+          "isbn": "978-0451524935",
+          "total_copies": 3,
+          "available_copies": 3,
+          "copies_issued": 0,
+          "availability_status": "Available"
+        },
+        {
+          "id": 18,
+          "title": "E2E Database Systems Revised",
+          "author": "Test Author",
+          "isbn": "9780000005901",
+          "total_copies": 6,
+          "available_copies": 6,
+          "copies_issued": 0,
+          "availability_status": "Available"
+        },
+        {
+          "id": 4,
+          "title": "Pride and Prejudice",
+          "author": "Jane Austen",
+          "isbn": "978-0141439518",
+          "total_copies": 6,
+          "available_copies": 6,
+          "copies_issued": 0,
+          "availability_status": "Available"
+        },
+        {
+          "id": 5,
+          "title": "The Catcher in the Rye",
+          "author": "J.D. Salinger",
+          "isbn": "978-0316769174",
+          "total_copies": 2,
+          "available_copies": 2,
+          "copies_issued": 0,
+          "availability_status": "Available"
+        },
+        {
+          "id": 1,
+          "title": "The Great Gatsby",
+          "author": "F. Scott Fitzgerald",
+          "isbn": "978-0743273565",
+          "total_copies": 5,
+          "available_copies": 5,
+          "copies_issued": 0,
+          "availability_status": "Available"
+        },
+        {
+          "id": 2,
+          "title": "To Kill a Mockingbird",
+          "author": "Harper Lee",
+          "isbn": "978-0061120084",
+          "total_copies": 4,
+          "available_copies": 4,
+          "copies_issued": 0,
+          "availability_status": "Available"
+        }
+      ]
+    },
+    {
+      "type": "api",
+      "route": "GET /api/queries?q=issues-by-month",
+      "status": 200,
+      "data": [
+        {
+          "month": "2026-03-01T00:00:00.000Z",
+          "total_issues": "1"
+        }
+      ]
+    },
+    {
+      "type": "api",
+      "route": "GET /api/queries?q=inactive-librarians",
+      "status": 200,
+      "data": [
+        {
+          "id": 1,
+          "name": "Emma Davis",
+          "employee_id": "LIB001"
+        },
+        {
+          "id": 2,
+          "name": "Frank Miller",
+          "employee_id": "LIB002"
+        }
+      ]
+    },
+    {
+      "type": "api",
+      "route": "GET /api/queries?q=avg-books-per-member",
+      "status": 200,
+      "data": [
+        {
+          "avg_books_per_member": "1.00000000000000000000"
+        }
+      ]
+    },
+    {
+      "type": "api",
+      "route": "GET /api/queries?q=most-issued-book",
+      "status": 200,
+      "data": [
+        {
+          "id": 18,
+          "title": "E2E Database Systems Revised",
+          "author": "Test Author",
+          "times_issued": "1"
+        }
+      ]
+    },
+    {
+      "type": "api",
+      "route": "GET /api/queries?q=active-issues",
+      "status": 200,
+      "data": []
+    },
+    {
+      "type": "api",
+      "route": "GET /api/queries?q=inventory-summary",
+      "status": 200,
+      "data": [
+        {
+          "total_titles": "6",
+          "total_copies": "26",
+          "total_available": "26"
+        }
+      ]
+    },
+    {
+      "type": "api",
+      "route": "DELETE /api/issues/3",
+      "status": 200,
+      "data": {
+        "message": "Issue deleted successfully"
+      }
+    },
+    {
+      "type": "api",
+      "route": "DELETE /api/books/18",
+      "status": 200,
+      "data": {
+        "message": "Book deleted successfully"
+      }
+    },
+    {
+      "type": "api",
+      "route": "DELETE /api/members/15",
+      "status": 200,
+      "data": {
+        "message": "Member deleted successfully"
+      }
+    },
+    {
+      "type": "api",
+      "route": "DELETE /api/librarians/9",
+      "status": 200,
+      "data": {
+        "message": "Librarian deleted successfully"
+      }
+    }
+  ]
+}
